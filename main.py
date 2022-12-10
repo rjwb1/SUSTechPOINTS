@@ -78,7 +78,7 @@ class Root(object):
         scene = d["scene"]
         frame = d["frame"]
         ann = d["annotation"]
-        with open("./data/"+scene +"/label/"+frame+".json",'w') as f:
+        with open("./../../datasets/"+scene +"/label/"+frame+".json",'w') as f:
           json.dump(ann, f, indent=2, sort_keys=True)
 
       return "ok"
@@ -121,7 +121,7 @@ class Root(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
     def checkscene(self, scene):
-      ck = check.LabelChecker(os.path.join("./data", scene))
+      ck = check.LabelChecker(os.path.join("./../../datasets", scene))
       ck.check()
       print(ck.messages)
       return ck.messages
@@ -151,7 +151,7 @@ class Root(object):
     @cherrypy.tools.json_out()
     def auto_annotate(self, scene, frame):
       print("auto annotate ", scene, frame)
-      return pre_annotate.annotate_file('./data/{}/lidar/{}.pcd'.format(scene,frame))
+      return pre_annotate.annotate_file('./../../datasets/{}/lidar/{}.pcd'.format(scene,frame))
       
 
 
@@ -234,7 +234,7 @@ class Root(object):
     @cherrypy.expose    
     @cherrypy.tools.json_out()
     def objs_of_scene(self, scene):
-      return self.get_all_objs(os.path.join("./data",scene))
+      return self.get_all_objs(os.path.join("./../../datasets",scene))
 
     def get_all_objs(self, path):
       label_folder = os.path.join(path, "label")
