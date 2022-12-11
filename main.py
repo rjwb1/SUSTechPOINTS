@@ -78,7 +78,7 @@ class Root(object):
         scene = d["scene"]
         frame = d["frame"]
         ann = d["annotation"]
-        with open("./../../datasets/"+scene +"/label/"+frame+".json",'w') as f:
+        with open("./../../datasets/"+scene +"/annotations/"+frame+".json",'w') as f:
           json.dump(ann, f, indent=2, sort_keys=True)
 
       return "ok"
@@ -252,7 +252,7 @@ class Root(object):
               objs = [x for x in map(lambda b: {"category":b["obj_type"], "id": b["obj_id"]}, boxes)]
               return objs
 
-      boxes = map(lambda f: file_2_objs(os.path.join(path, "label", f)), files)
+      boxes = map(lambda f: file_2_objs(os.path.join(path, "annotations", f)), files)
 
       # the following map makes the category-id pairs unique in scene
       all_objs={}

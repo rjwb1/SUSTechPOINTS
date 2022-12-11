@@ -220,7 +220,7 @@ def get_one_scene(s):
 
 
 def read_annotations(scene, frame):
-    filename = os.path.join(root_dir, scene, "label", frame+".json")
+    filename = os.path.join(root_dir, scene, "annotations", frame+".json")
     if (os.path.isfile(filename)):
       with open(filename,"r") as f:
         ann=json.load(f)
@@ -239,7 +239,7 @@ def read_ego_pose(scene, frame):
       return None
 
 def save_annotations(scene, frame, anno):
-    filename = os.path.join(root_dir, scene, "label", frame+".json")
+    filename = os.path.join(root_dir, scene, "annotations", frame+".json")
     with open(filename, 'w') as outfile:
             json.dump(anno, outfile)
 

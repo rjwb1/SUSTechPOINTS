@@ -38,7 +38,7 @@ class LabelChecker:
         self.frame_ids = ids
 
     def load_labels(self):
-        label_folder = os.path.join(self.path, 'label')
+        label_folder = os.path.join(self.path, 'annotations')
         files = os.listdir(label_folder)
         labels = {}
         obj_ids = {}
