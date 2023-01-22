@@ -5,6 +5,10 @@ class ObjectCategory
 
 
     obj_type_map = {
+        Person:          {color: '#86af49',  size:[0.6, 0.6, 1.8]},
+        Thorvald:        {color: '#ff0000',  size:[2.0, 1.6, 1.9]},
+        Pole:            {color: '#00ff00',  size:[0.1, 0.1, 1.2]},
+        
         Car:            {color: '#86af49',  size:[4.5, 1.8, 1.5], attr:["door open", "trunk open"]},
         Pedestrian:     {color: '#ff0000',  size:[0.4, 0.5, 1.7], attr:["umbrella", "sitting", "squating", "bending over", "luggage"]},
         Van:            {color: '#00ff00',  size:[4.5, 1.8, 1.5], attr:["door open", "trunk open"]},
@@ -77,7 +81,7 @@ class ObjectCategory
         
     }
 
-    popularCategories = ["Car", "Pedestrian", "Van", "Bus", "Truck", "Scooter", "ScooterRider", "Bicycle", "BicycleRider"];
+    popularCategories = ["Person", "Thorvald", "Pole"];
 
     guess_obj_type_by_dimension(scale){
 
