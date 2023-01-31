@@ -833,20 +833,23 @@ function Editor(editorUi, wrapperUi, editorCfg, data, name="editor"){
 
         case "cm-delete-obj":
             {
+                const response = confirm("This Will Delete in All Frames, Continue?");
+                if (response) {
                 //let saveList=[];
-                this.data.worldList.forEach(w=>{
-                    let box = w.annotation.boxes.find(b=>b.obj_track_id === this.selected_box.obj_track_id);
-                    if (box && box !== this.selected_box){
-                        w.annotation.unload_box(box);
-                        w.annotation.remove_box(box);
-                        //saveList.push(w);
-                        w.annotation.setModified();
-                    }
-                });
+                    this.data.worldList.forEach(w=>{
+                        let box = w.annotation.boxes.find(b=>b.obj_track_id === this.selected_box.obj_track_id);
+                        if (box && box !== this.selected_box){
+                            w.annotation.unload_box(box);
+                            w.annotation.remove_box(box);
+                            //saveList.push(w);
+                            w.annotation.setModified();
+                        }
+                    });
 
-                //saveWorldList(saveList);
-                this.remove_selected_box();
-                this.header.updateModifiedStatus();
+                    //saveWorldList(saveList);
+                    this.remove_selected_box();
+                    this.header.updateModifiedStatus();                
+                } 
             }
             break;
 
