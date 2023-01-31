@@ -11,9 +11,7 @@ class LabelChecker:
         self.load_labels()
 
         self.def_labels = [
-        "Person", "Thorvald", "Pole", "Car","Pedestrian","Van","Bus","Truck","ScooterRider","Scooter","BicycleRider","Bicycle","Motorcycle","MotorcyleRider","PoliceCar","TourCar","RoadWorker","Child",
-        "BabyCart","Cart","Cone","FireHydrant","SaftyTriangle","PlatformCart","ConstructionCart","RoadBarrel","TrafficBarrier","LongVehicle","BicycleGroup","ConcreteTruck",
-        "Tram","Excavator","Animal","TrashCan","ForkLift","Trimotorcycle","FreightTricycle,","Crane","RoadRoller","Bulldozer","DontCare","Misc","Unknown","Unknown1","Unknown2",
+        "Person", "Thorvald", "Pole", "Trolley", "DontCare","Misc","Unknown","Unknown1","Unknown2",
         "Unknown3","Unknown4","Unknown5",
         ]
 
